@@ -1,0 +1,10 @@
+---
+  - name: "Lets play"
+    hosts: localhost
+    tasks:
+
+    - name: "Execute Comamand on node"
+      shell: "whoami;hostname;ip a;uname -a"
+      register: "output"
+
+    - debug: var=output.stdout_lines
